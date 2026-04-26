@@ -10,13 +10,13 @@ export default function Hero() {
                     </h1>
 
                     <p>
-                        I build efficient systems using C++ and modern technologies.
-                        Focused on problem solving, performance, and clean design.
+                        C++ Developer focused on DSA and system-level problem solving.
+                        Building efficient, real-world applications and improving algorithmic performance.
                     </p>
 
                     <div className="hero-buttons">
                         <button className="btn">View Projects</button>
-                        <button className="btn-outline" onClick={()=>window.open("https://github.com/itisbot21")}>GitHub</button>
+                        <button className="btn-outline" onClick={() => window.open("https://github.com/itisbot21")}>GitHub</button>
                     </div>
                 </div>
 
