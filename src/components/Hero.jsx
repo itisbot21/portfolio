@@ -27,14 +27,10 @@ export default function Hero() {
                             {`// sample.cpp
                                 #include <chatgpt>
 
-                                int main()
-                                {
-                                
-                                std::cout << Hello World! << "\n";
-
-                                return 0;
-                                }
-                            }`}
+int main()
+{                                
+ std::cout << Hello World!;
+}`}
                         </pre>
                     </div>
                 </div>
