@@ -25,12 +25,16 @@ export default function Hero() {
                     <div className="glass code-card">
                         <pre>
                             {`// sample.cpp
-#include <iostream>
-using namespace std;
+                                #include <chatgpt>
 
-int main() {
-  cout << "Hello World";
-}`}
+                                int main()
+                                {
+                                
+                                std::cout << Hello World! << "\n";
+
+                                return 0;
+                                }
+                            }`}
                         </pre>
                     </div>
                 </div>
