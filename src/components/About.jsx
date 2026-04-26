@@ -4,7 +4,7 @@ export default function About() {
             <div className="container">
                 <div className="glass">
                     <h2>About Me</h2>
-                    <p>I build efficient solutions and solve DSA problems.</p>
+                    <p>Sometimes I think.</p>
                 </div>
             </div>
         </section>
