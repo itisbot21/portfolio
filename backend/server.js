@@ -22,10 +22,19 @@ app.post("/contact", async (req, res) => {
         });
 
         await transporter.sendMail({
-            from: email,
+            from: `"Portfolio Contact" <${process.env.EMAIL}>`,
             to: process.env.EMAIL,
-            subject: `Message from ${name}`,
-            text: message,
+            subject: `New message from ${name}`,
+
+            text: `
+Name: ${name}
+Email: ${email}
+
+Message:
+${message}
+  `,
+
+            replyTo: email
         });
 
         res.status(200).json({ success: true });
@@ -37,5 +46,5 @@ app.post("/contact", async (req, res) => {
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
