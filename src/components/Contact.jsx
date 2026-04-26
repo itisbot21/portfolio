@@ -18,7 +18,7 @@ export default function Contact() {
         e.preventDefault();
 
         try {
-            const res = await fetch("http://https://portfolio-backend-g9ae.onrender.com//contact", {
+            const res = await fetch("https://portfolio-backend-g9ae.onrender.com//contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
