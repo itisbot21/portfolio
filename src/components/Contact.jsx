@@ -47,9 +47,9 @@ export default function Contact() {
                     </p>
 
                     <form onSubmit={handleSubmit} className="contact-form">
-                        <input onChange={handleChange} type="text" placeholder="Your Name" required />
-                        <input onChange={handleChange} type="email" placeholder="Your Email" required />
-                        <textarea onChange={handleChange} placeholder="Your Message" rows="5" required></textarea>
+                        <input onChange={handleChange} name="name" type="text" placeholder="Your Name" required />
+                        <input onChange={handleChange} name="email" type="email" placeholder="Your Email" required />
+                        <textarea onChange={handleChange} name="message" placeholder="Your Message" rows="5" required></textarea>
 
                         <button type="submit" className="btn">
                             Send Message
