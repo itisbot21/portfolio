@@ -25,7 +25,7 @@ export default function Hero() {
                     <div className="glass code-card">
                         <pre>
                             {`// sample.cpp
-                                #include <chatgpt>
+#include <chatgpt>
 
 int main()
 {                                
