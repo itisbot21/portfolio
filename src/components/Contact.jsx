@@ -46,7 +46,7 @@ export default function Contact() {
                         Have a project or just want to connect? Drop a message.
                     </p>
 
-                    <form className="contact-form">
+                    <form onSubmit={handleSubmit} className="contact-form">
                         <input type="text" placeholder="Your Name" required />
                         <input type="email" placeholder="Your Email" required />
                         <textarea placeholder="Your Message" rows="5" required></textarea>
