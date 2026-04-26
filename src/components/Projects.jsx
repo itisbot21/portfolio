@@ -12,8 +12,8 @@ export default function Projects() {
                     </div>
 
                     <div className="glass card">
-                        <h3>Project 2</h3>
-                        <p>Description</p>
+                        <h3>what is 1 + 1</h3>
+                        <p>not 3.</p>
                     </div>
                 </div>
             </div>
