@@ -1,4 +1,42 @@
+import React from "react";
+
 export default function Contact() {
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        message: ""
+    });
+
+    const handleChange = (e) => {
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const res = await fetch("http://localhost:5000/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(form)
+            });
+
+            const data = await res.json();
+
+            if (data.success) {
+                alert("Message sent!");
+            } else {
+                alert("Failed to send message");
+            }
+        } catch (err) {
+            alert("Error connecting to server");
+        }
+    };
     return (
         <section id="contact" className="section">
             <div className="container">
