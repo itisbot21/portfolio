@@ -6,7 +6,7 @@ import Contact from "./components/Contact";
 import "./styles/main.css";
 import { Toaster } from "react-hot-toast";
 import Skills from "./components/Skills";
-import Skills from "./components/Footer";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
