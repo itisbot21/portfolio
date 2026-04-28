@@ -1,42 +1,41 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
+import.meta.env.VITE_API_URL
 
 export default function Contact() {
-    const [form, setForm] = useState({
-        name: "",
-        email: "",
-        message: ""
-    });
+    const [form, setForm] = useState({ name: "", email: "", message: "" });
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (e) => {
-        setForm({
-            ...form,
-            [e.target.name]: e.target.value
-        });
+        setForm({ ...form, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
 
         try {
-            const res = await fetch("https://portfolio-backend-g9ae.onrender.com/contact", {
+            const res = await fetch(`${API_URL}/contact`, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(form)
             });
 
             const data = await res.json();
 
             if (data.success) {
-                alert("Message sent!");
+                toast.success("Message sent successfully!");
+                setForm({ name: "", email: "", message: "" }); // reset form
             } else {
-                alert("Failed to send message");
+                toast.error("Failed to send message. Please try again.");
             }
         } catch (err) {
-            alert("Error connecting to server");
+            toast.error("Cannot connect to server. Try emailing directly.");
+        } finally {
+            setLoading(false);
         }
     };
+
     return (
         <section id="contact" className="section">
             <div className="container">
@@ -47,12 +46,37 @@ export default function Contact() {
                     </p>
 
                     <form onSubmit={handleSubmit} className="contact-form">
-                        <input onChange={handleChange} name="name" type="text" placeholder="Your Name" required />
-                        <input onChange={handleChange} name="email" type="email" placeholder="Your Email" required />
-                        <textarea onChange={handleChange} name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <input
+                            onChange={handleChange}
+                            value={form.name}
+                            name="name"
+                            type="text"
+                            placeholder="Your Name"
+                            aria-label="Your Name"
+                            required
+                        />
+                        <input
+                            onChange={handleChange}
+                            value={form.email}
+                            name="email"
+                            type="email"
+                            placeholder="Your Email"
+                            aria-label="Your Email"
+                            required
+                        />
+                        <textarea
+                            onChange={handleChange}
+                            value={form.message}
+                            name="message"
+                            placeholder="Your Message"
+                            aria-label="Your Message"
+                            rows="5"
+                            required
+                        />
 
-                        <button type="submit" className="btn">
-                            Send Message
+                        <button type="submit" className="btn" disabled={loading}
+                            style={{ opacity: loading ? 0.7 : 1, cursor: loading ? "not-allowed" : "pointer" }}>
+                            {loading ? "Sending..." : "Send Message"}
                         </button>
                     </form>
 
