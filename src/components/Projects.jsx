@@ -6,18 +6,24 @@ export default function Projects() {
 
                 <div className="projects">
                     <div className="glass card">
-                        <h3 style={{ marginBottom: "10px" }}>Library Management System</h3>
-                        <p style={{ opacity: 0.75, marginBottom: "15px" }}>
-                            Built a CLI system to manage book issuing and returns using OOP and STL in C++.
-                            Supports multiple users, due dates, and fine calculation.
+
+                        <h3>Library Management System</h3>
+
+                        <div className="tags">
+                            <span>C++</span>
+                            <span>STL</span>
+                            <span>OOP</span>
+                        </div>
+
+                        <p>
+                            CLI system for managing book issuing, returns, and fines.
                         </p>
-                        <a href="https://github.com/itisbot21" target="_blank" rel="noreferrer"
-                            style={{ color: "#38bdf8", fontSize: "0.85rem" }}>
+
+                        <a href="https://github.com/itisbot21" target="_blank">
                             View on GitHub →
                         </a>
-                    </div>
 
-                    {/* Add your next project here */}
+                    </div>
                 </div>
             </div>
         </section>

@@ -3,7 +3,6 @@ export default function Hero() {
         <section className="hero">
             <div className="container hero-grid">
 
-                {/* LEFT SIDE */}
                 <div className="hero-left">
                     <h1>
                         Hi, I'm <span>Kaifi Azam</span>
@@ -15,21 +14,27 @@ export default function Hero() {
                     </p>
 
                     <div className="hero-buttons">
-                        <button className="btn">View Projects</button>
-                        <button className="btn-outline" onClick={() => window.open("https://github.com/itisbot21")}>GitHub</button>
+                        <button className="btn" onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}>
+                            View Projects
+                        </button>
+                        <button className="btn-outline" onClick={() => window.open("https://github.com/itisbot21")}>
+                            GitHub
+                        </button>
                     </div>
                 </div>
 
-                {/* RIGHT SIDE */}
                 <div className="hero-right">
                     <div className="glass code-card">
                         <pre>
-                            {`// sample.cpp
-#include <chatgpt>
+                            {`// solution.cpp
+#include <iostream>
+#include <vector>
 
-int main()
-{                                
- std::cout << Hello World!;
+int main() {
+  std::vector<int> arr = {1,2,3};
+  for (int x : arr)
+    std::cout << x << " ";
+  return 0;
 }`}
                         </pre>
                     </div>
