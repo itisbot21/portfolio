@@ -2,15 +2,22 @@ export default function About() {
     return (
         <section id="about" className="section">
             <div className="container">
-                <div className="glass">
-                    <h2>About Me</h2>
-                    <p style={{ opacity: 0.8, lineHeight: 1.8 }}>
-                        I'm <strong style={{ color: "#38bdf8" }}>Kaifi Azam</strong>, a C++ developer with a strong focus on
-                        Data Structures & Algorithms and system-level programming. I enjoy breaking down
-                        complex problems into clean, efficient solutions. Currently building projects that
-                        sharpen my skills in OOP, STL, and algorithmic thinking — with the goal of contributing
-                        to high-performance software systems.
-                    </p>
+                <div className="about-grid">
+                    <div className="about-left">
+                        <div className="section-num">{""} </div>
+                    </div>
+                    <div className="about-right">
+                        <p className="about-label">About Me</p>
+                        {/* <h2 className="about-heading">
+                            Kaifi Azam
+                        </h2> */}
+                        <p className="about-text">
+                            I build systems, not just code. <br />
+
+                            C++ developer focused on efficient, structured solutions driven by strong fundamentals in DSA and system-level thinking.
+
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>

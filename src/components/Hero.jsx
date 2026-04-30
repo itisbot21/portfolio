@@ -1,45 +1,32 @@
 export default function Hero() {
     return (
         <section className="hero">
-            <div className="container hero-grid">
+            <div className="hero-bg-text">C++</div>
 
-                <div className="hero-left">
-                    <h1>
-                        Hi, I'm <span>Kaifi Azam</span>
-                    </h1>
+            <div className="container">
+                <p className="hero-eyebrow fade-up d1">C++ Developer — Systems & Algorithms</p>
 
-                    <p>
-                        C++ Developer focused on DSA and system-level problem solving.
-                        Building efficient, real-world applications and improving algorithmic performance.
-                    </p>
+                <h1 className="hero-title fade-up d2">
+                    Kaifi
+                    <em>Azam</em>
+                </h1>
 
-                    <div className="hero-buttons">
-                        <button className="btn" onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}>
-                            View Projects
+                <div className="hero-bottom fade-up d3">
+                    {/* <p className="hero-desc">
+                        Focused on data structures, algorithms, and system-level problem solving. 
+                    </p> */}
+                    <div className="hero-actions">
+                        <button
+                            className="btn-primary"
+                            onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
+                        >
+                            View Work
                         </button>
-                        <button className="btn-outline" onClick={() => window.open("https://github.com/itisbot21")}>
-                            GitHub
-                        </button>
+                        <a href="https://github.com/itisbot21" target="_blank" rel="noreferrer" className="btn-ghost">
+                            GitHub →
+                        </a>
                     </div>
                 </div>
-
-                <div className="hero-right">
-                    <div className="glass code-card">
-                        <pre>
-                            {`// solution.cpp
-#include <iostream>
-#include <vector>
-
-int main() {
-  std::vector<int> arr = {1,2,3};
-  for (int x : arr)
-    std::cout << x << " ";
-  return 0;
-}`}
-                        </pre>
-                    </div>
-                </div>
-
             </div>
         </section>
     );
